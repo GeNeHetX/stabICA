@@ -121,7 +121,7 @@ mc_stab_ProDenICA =function(table,k,n_runs,nb_threads=12){
     return(ica)
   }
   
-  ICAs = mclapply(1 : n_runs, \(i){
+  ICAs = parallel::mclapply(1 : n_runs, \(i){
     ica = NULL
     while(is.null(ica)) {
       ica = NULL
@@ -151,7 +151,7 @@ mc_stab_ProDenICA =function(table,k,n_runs,nb_threads=12){
   hc = hclust(as.dist(1-Sim), method = 'average')
   cluster_index = cutree(hc, k=k)
 
-  Stabilized = mclapply( 1:k, \(i){
+  Stabilized = parallel::mclapply( 1:k, \(i){
     cluster_i = which(cluster_index==i)
     c(centrotype(components, Sim, cluster_i),
     stab_index(Sim, cluster_i))
@@ -190,7 +190,7 @@ mc_stable_fastica <-
     print("Compute independent components for each run")
 
 
-  ICAs = mclapply(1:n_runs, \(i)  {  
+  ICAs = parallel::mclapply(1:n_runs, \(i)  {  
     if(verbose)
       print(paste0("runs ", i, "/",n_runs))
 
@@ -218,7 +218,7 @@ mc_stable_fastica <-
   if(verbose)
     print("Compute the stability index and the centrotype for each component")
 
-  STABILIZED = mclapply( 1:n_comp, \(i) {
+  STABILIZED = parallel::mclapply( 1:n_comp, \(i) {
     cluster_i = which(cluster_index == i)
     c(centrotype(components, Sim, cluster_i), stab_index(Sim, cluster_i))
 
