@@ -1,1 +1,4 @@
 export(stab_index,centrotype,mc_stab_ProDenICA ,mc_stable_fastica)
+import(fastICA)
+import(parallel)
+import(ProDenICA)

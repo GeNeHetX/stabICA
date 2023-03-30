@@ -9,5 +9,5 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Imports :
-	parallel,ProDenICA,fastICA
+Imports:
+	parallel(>=  4.2.2),ProDenICA(>= 1.1),fastICA(>= 1.2-3)
