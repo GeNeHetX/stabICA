@@ -11,7 +11,7 @@ This package is a R implementation of stabilized-ICA python package
 
 ## Installation
 
-Install my-project with github
+Install my-project from github
 
 ```bash
  git clone https://github.com/GeNeHetX/stabICA
