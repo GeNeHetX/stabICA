@@ -1,5 +1,5 @@
 
-# Project Title
+# StabICA
 
 This package is a R implementation of stabilized-ICA python package
 
